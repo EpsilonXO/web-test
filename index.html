@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APEX FITNESS | Transform Your Body</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,8 +13,8 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: #0a0a0a;
+            font-family: 'Roboto', sans-serif;
+            background: #000;
             color: #fff;
             overflow-x: hidden;
         }
@@ -23,11 +24,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 68, 68, 0.3);
+            border-bottom: 3px solid #e74c3c;
         }
 
         nav .container {
@@ -39,12 +40,11 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #ff4444, #ff8844);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
+            color: #e74c3c;
+            letter-spacing: 3px;
         }
 
         .nav-links {
@@ -54,22 +54,28 @@
         }
 
         .nav-links a {
+            font-family: 'Oswald', sans-serif;
             color: #fff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
             transition: color 0.3s;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: #ff4444;
+            color: #e74c3c;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(10, 10, 10, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23111" width="1200" height="800"/><circle cx="400" cy="300" r="200" fill="%23ff4444" opacity="0.1"/><circle cx="900" cy="500" r="250" fill="%23ff8844" opacity="0.1"/></svg>');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80');
             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,10 +83,22 @@
             position: relative;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(0, 0, 0, 0.6));
+        }
+
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 0 2rem;
             animation: fadeInUp 1s ease;
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes fadeInUp {
@@ -95,44 +113,54 @@
         }
 
         .hero h1 {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #fff, #ff4444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+            color: #fff;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            letter-spacing: 5px;
         }
 
-        .hero p {
-            font-size: 1.5rem;
+        .hero .tagline {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
             margin-bottom: 3rem;
-            color: #ccc;
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, #ff4444, #ff8844);
+            padding: 1.5rem 4rem;
+            background: #e74c3c;
             color: #fff;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 3px solid #e74c3c;
+            position: relative;
+            overflow: hidden;
         }
 
         .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 68, 68, 0.5);
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
         }
 
         /* Stats Section */
         .stats {
             background: #111;
-            padding: 4rem 5%;
-            border-top: 1px solid rgba(255, 68, 68, 0.2);
-            border-bottom: 1px solid rgba(255, 68, 68, 0.2);
+            padding: 5rem 5%;
+            border-top: 3px solid #e74c3c;
+            border-bottom: 3px solid #e74c3c;
         }
 
         .stats-container {
@@ -146,85 +174,216 @@
 
         .stat {
             padding: 2rem;
-            background: rgba(255, 68, 68, 0.05);
-            border-radius: 20px;
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
             transition: transform 0.3s;
         }
 
         .stat:hover {
-            transform: scale(1.05);
+            transform: translateX(10px);
+            background: rgba(231, 76, 60, 0.2);
         }
 
         .stat-number {
-            font-size: 3.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #ff4444, #ff8844);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #e74c3c;
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: 1.1rem;
-            color: #aaa;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Equipment Section */
+        .equipment {
+            padding: 6rem 5%;
+            background: #000;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 4px;
+        }
+
+        .section-subtitle {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            color: #e74c3c;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .equipment-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .equipment-card {
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #222;
+            transition: transform 0.3s;
+        }
+
+        .equipment-card:hover {
+            transform: scale(1.05);
+            border-color: #e74c3c;
+        }
+
+        .equipment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+
+        .equipment-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: #fff;
+            letter-spacing: 3px;
         }
 
         /* Programs Section */
         .programs {
             padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            background: linear-gradient(135deg, #fff, #ff4444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+                        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
 
         .program-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         .program-card {
-            background: linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(10, 10, 10, 0.5));
-            border: 1px solid rgba(255, 68, 68, 0.3);
-            border-radius: 25px;
+            background: rgba(17, 17, 17, 0.95);
+            border: 3px solid #333;
             padding: 3rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #e74c3c;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover::before {
+            transform: scaleX(1);
         }
 
         .program-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(255, 68, 68, 0.2);
+            border-color: #e74c3c;
+            box-shadow: 0 20px 50px rgba(231, 76, 60, 0.3);
         }
 
         .program-icon {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1.5rem;
         }
 
         .program-card h3 {
-            font-size: 2rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #ff4444;
+            color: #e74c3c;
+            letter-spacing: 2px;
         }
 
         .program-card p {
+            font-family: 'Roboto', sans-serif;
             color: #ccc;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .program-price {
-            font-size: 2.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
             font-weight: bold;
-            color: #ff4444;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        /* Athlete Section */
+        .athlete {
+            padding: 6rem 5%;
+            background: #000;
+        }
+
+        .athlete-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .athlete-image {
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            border: 5px solid #e74c3c;
+            box-shadow: 20px 20px 0 rgba(231, 76, 60, 0.3);
+        }
+
+        .athlete-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: #e74c3c;
+            letter-spacing: 3px;
+        }
+
+        .athlete-text p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #ccc;
+            margin-bottom: 1.5rem;
         }
 
         /* Contact Section */
@@ -232,6 +391,7 @@
             padding: 6rem 5%;
             background: #111;
             text-align: center;
+            border-top: 3px solid #e74c3c;
         }
 
         .contact-content {
@@ -247,21 +407,22 @@
         }
 
         .social-link {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ff4444, #ff8844);
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background: #e74c3c;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #fff;
             text-decoration: none;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            border: 3px solid #e74c3c;
         }
 
         .social-link:hover {
-            transform: scale(1.2) rotate(10deg);
+            background: transparent;
+            transform: scale(1.2);
         }
 
         /* Footer */
@@ -269,7 +430,27 @@
             padding: 2rem 5%;
             text-align: center;
             color: #666;
-            border-top: 1px solid rgba(255, 68, 68, 0.2);
+            background: #000;
+            border-top: 1px solid #333;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .athlete-content {
+                grid-template-columns: 1fr;
+            }
+
+            .athlete-image {
+                height: 400px;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -277,12 +458,12 @@
                 font-size: 3rem;
             }
 
-            .nav-links {
-                display: none;
+            .hero .tagline {
+                font-size: 1.2rem;
             }
 
-            .program-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 3rem;
             }
         }
     </style>
@@ -291,7 +472,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">APEX</div>
+            <div class="logo">APEX FITNESS</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#programs">Programs</a></li>
@@ -304,9 +485,9 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>UNLEASH YOUR POTENTIAL</h1>
-            <p>Transform your body and mind with proven training methods that deliver real results</p>
-            <a href="#programs" class="cta-button">START YOUR JOURNEY</a>
+            <h1>NO PAIN NO GAIN</h1>
+            <p class="tagline">Push Your Limits. Break Your Records.</p>
+            <a href="#programs" class="cta-button">Start Training Now</a>
         </div>
     </section>
 
@@ -332,27 +513,58 @@
         </div>
     </section>
 
+    <!-- Equipment Section -->
+    <section class="equipment">
+        <h2 class="section-title">TRAIN WITH THE BEST</h2>
+        <p class="section-subtitle">Professional Grade Equipment</p>
+        <div class="equipment-grid">
+            <div class="equipment-card" style="background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80');">
+                <div class="equipment-title">FREE WEIGHTS</div>
+            </div>
+            <div class="equipment-card" style="background-image: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80');">
+                <div class="equipment-title">CARDIO ZONE</div>
+            </div>
+            <div class="equipment-card" style="background-image: url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80');">
+                <div class="equipment-title">STRENGTH TRAINING</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Athlete Section -->
+    <section class="athlete" id="about">
+        <div class="athlete-content">
+            <div class="athlete-image"></div>
+            <div class="athlete-text">
+                <h2>TRAIN LIKE A CHAMPION</h2>
+                <p>With over 15 years of experience in professional athletics and personal training, I've helped thousands transform their bodies and minds.</p>
+                <p>My approach combines science-backed training methods with real-world experience to deliver results that last.</p>
+                <p>Whether you're just starting out or looking to break through plateaus, I'll guide you every step of the way to achieve your fitness goals.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Programs Section -->
     <section class="programs" id="programs">
         <h2 class="section-title">TRAINING PROGRAMS</h2>
+        <p class="section-subtitle">Choose Your Path To Greatness</p>
         <div class="program-grid">
             <div class="program-card">
                 <div class="program-icon">💪</div>
-                <h3>Strength Builder</h3>
+                <h3>STRENGTH BUILDER</h3>
                 <p>Build raw power and muscle mass with progressive overload training designed for maximum gains.</p>
-                <div class="program-price">$99/mo</div>
+                <div class="program-price">$99/MO</div>
             </div>
             <div class="program-card">
                 <div class="program-icon">🔥</div>
-                <h3>Fat Shredder</h3>
+                <h3>FAT SHREDDER</h3>
                 <p>Burn fat while maintaining muscle through high-intensity training and optimized nutrition plans.</p>
-                <div class="program-price">$129/mo</div>
+                <div class="program-price">$129/MO</div>
             </div>
             <div class="program-card">
                 <div class="program-icon">⚡</div>
-                <h3>Elite Athlete</h3>
+                <h3>ELITE ATHLETE</h3>
                 <p>Take your performance to the next level with personalized 1-on-1 coaching and custom programming.</p>
-                <div class="program-price">$299/mo</div>
+                <div class="program-price">$299/MO</div>
             </div>
         </div>
     </section>
@@ -361,8 +573,8 @@
     <section class="contact" id="contact">
         <div class="contact-content">
             <h2 class="section-title">LET'S CONNECT</h2>
-            <p style="font-size: 1.3rem; color: #ccc; margin-bottom: 2rem;">
-                Ready to start your transformation? Follow me on social media and join the community.
+            <p style="font-size: 1.3rem; color: #ccc; margin-bottom: 2rem; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px;">
+                Join The Community. Start Your Journey.
             </p>
             <div class="social-links">
                 <a href="#" class="social-link">📷</a>
@@ -393,9 +605,10 @@
             });
         });
 
-        // Add scroll animation to stats
+        // Scroll animations
         const observerOptions = {
-            threshold: 0.5
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -407,10 +620,10 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.stat, .program-card').forEach(el => {
+        document.querySelectorAll('.stat, .program-card, .equipment-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
             observer.observe(el);
         });
     </script>
